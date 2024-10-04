@@ -44,9 +44,13 @@ public class EmpleadoController {
 
     //metodo para actualizar el empleado
     @PutMapping("path/{id}")
-    public Empleado ActualizaEmpleado(@PathVariable int id, @RequestBody Empleado empleado) {
-        //TODO: process PUT request
-        
+    public Empleado ActualizaEmpleado(@PathVariable int id, @RequestBody Empleado empleadoActualizado) {
+        for(int i=0;i<=empleados.size();i++){
+            if(empleados.get(i).getidEmpleado()==id){
+                empleados.set(i,empleadoActualizado);
+                return empleadoActualizado;
+            }
+        }
         return null;
     }
 
