@@ -8,12 +8,12 @@ public class Empleado {
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String correoElectronico;
-    private long telefono;
+    private String telefono;
     private String puesto;
 
     //constructor de nuestro objeto empleado
     public Empleado(int idEmpleado, String nombre, String apellidoPaterno, String apellidoMaterno, String correoElectronico,
-    long telefono, String puesto) {
+    String telefono, String puesto) {
         this.idEmpleado = idEmpleado;
         this.nombre = nombre;
         this.apellidoPaterno=apellidoPaterno;
@@ -53,7 +53,44 @@ public class Empleado {
         return apellidoMaterno;
     }
 
-    
+    public  void  setApellidoMaterno(String apellidoMaterno){
+        this.apellidoMaterno=apellidoMaterno;
+    }
+
+    public   String getCorreoElectronico(){
+        return correoElectronico;
+    }
+
+    public void   setCorreoElectronico(String correoElectronico){
+        this.correoElectronico=correoElectronico;
+    }
+
+    public String  getTelefono(){
+        return telefono;
+    }
+
+    public  void  setTelefono(String telefono){
+        this.telefono = telefono;
+    }
+
+    public  String getPuesto(){
+        return puesto;
+    }
+
+    public void   setPuesto(String puesto){
+        this.puesto=puesto;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
