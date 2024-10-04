@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 @RestController
@@ -32,12 +35,20 @@ public class EmpleadoController {
 
     //creamos un nuevo empleado
     @PostMapping("path")
-    public String agregaEmpleado(@RequestBody String nombre) {
+    public Empleado agregaEmpleado(@RequestBody Empleado empleado) {
         //TODO: process POST request
-        
-        return entity;
+        empleados.add(empleado);
+        return empleado;
     }
     
+
+    //metodo para actualizar el empleado
+    @PutMapping("path/{id}")
+    public Empleado ActualizaEmpleado(@PathVariable int id, @RequestBody Empleado empleado) {
+        //TODO: process PUT request
+        
+        return null;
+    }
 
 
 }
