@@ -22,19 +22,19 @@ public class EmpleadoController {
     private List<Empleado> empleados= new ArrayList<>();
 
     //metodo para obtener los empleados
-    @GetMapping("/empleados")
+    @GetMapping("")
     public List<Empleado> getAllmpleados(){
         return empleados;
     }
 
     //obtenemos el empleado por su id
-    @GetMapping("/empleados/{id}")
+    @GetMapping("/{id}")
     public Empleado getEmpleadoById(@PathVariable int id){
         return empleados.stream().filter(e->e.getidEmpleado()==id).findFirst().orElse(null);
     }
 
     //creamos un nuevo empleado
-    @PostMapping("path")
+    @PostMapping("")
     public Empleado agregaEmpleado(@RequestBody Empleado empleado) {
         //TODO: process POST request
         empleados.add(empleado);
@@ -43,9 +43,9 @@ public class EmpleadoController {
     
 
     //metodo para actualizar el empleado
-    @PutMapping("path/{id}")
+    @PutMapping("/{id}")
     public Empleado ActualizaEmpleado(@PathVariable int id, @RequestBody Empleado empleadoActualizado) {
-        for(int i=0;i<=empleados.size();i++){
+        for(int i=0;i<empleados.size();i++){
             if(empleados.get(i).getidEmpleado()==id){
                 empleados.set(i,empleadoActualizado);
                 return empleadoActualizado;
@@ -55,7 +55,7 @@ public class EmpleadoController {
     }
 
     //metodo para elminar un empleado
-    @DeleteMapping("/empleados/{id}")
+    @DeleteMapping("/{id}")
     public String borraEmpleado(@PathVariable  int id) {
         empleados.removeIf(e->e.getidEmpleado()==id);
         return "Empleado Eliminado";
