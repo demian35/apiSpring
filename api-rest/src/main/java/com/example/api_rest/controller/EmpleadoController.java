@@ -54,5 +54,13 @@ public class EmpleadoController {
         return null;
     }
 
+    //metodo para elminar un empleado
+    @DeleteMapping("/empleados/{id}")
+    public String borraEmpleado(@PathVariable  int id) {
+        empleados.removeIf(e->e.getidEmpleado()==id);
+        return "Empleado Eliminado";
+    }
+
+
 
 }
